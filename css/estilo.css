@@ -1,0 +1,139 @@
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  background: #f6f8fb;
+  color: #222;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 18px;
+}
+
+.site-header {
+  background: #111;
+  color: #fff;
+  padding: 22px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 0.5px;
+}
+
+.top-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.btn {
+  background: linear-gradient(180deg,#4a90e2,#3577c6);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform .08s ease, box-shadow .12s ease, opacity .12s;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+form { margin-top: 12px; display:block; }
+label { display:block; margin:8px 0 4px; font-weight:600; }
+input[type="text"], input[type="email"], select {
+  display:inline-block;
+  padding:6px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  min-width: 260px;
+}
+
+button.btn, .btn[type="submit"] { display:inline-block; margin-top:12px; padding:10px 18px; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 14px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+th {
+  background: #111;
+  color: #fff;
+  text-align: left;
+}
+
+td.acoes a { text-decoration: none; margin-right:10px; }
+td.acoes a:hover { text-decoration: underline; }
+td.acoes a:first-child { color: #1a73e8; }
+td.acoes a:last-child  { color: #d9534f; }
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+    z-index: 9999;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .site-header h1 { font-size: 28px; }
+  .btn { width: 100%; text-align: center; }
+  input[type="text"], input[type="email"], select { width: 100%; }
+  .container { padding: 12px; margin: 12px; }
+}
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #222;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
